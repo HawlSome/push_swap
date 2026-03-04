@@ -6,9 +6,11 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 00:42:11 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/28 03:04:30 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 01:49:53 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_put_str(int fd, char *str)
 {

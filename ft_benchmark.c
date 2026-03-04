@@ -6,11 +6,10 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 01:54:22 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/28 03:05:17 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 02:08:11 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf/ft_printf.h"
 #include "push_swap.h"
 
 static int	ft_count_actions(t_ac_list *actions, char *action_name)
@@ -54,7 +53,7 @@ void	ft_benchmark(t_list *stack_a, t_ac_list *actions, int is_adaptive,
 {
 	if (!stack_a || !actions)
 		return ;
-	ft_printf(2, "[bench] disorder:  	%f\n", disorder_metric(stack_a));
+	ft_printf(2, "[bench] disorder:  	%f\n%%", disorder_metric(stack_a));
 	ft_printf(2, "[bench] strategy:		");
 	ft_print_strategy(is_adaptive, algo_type);
 	ft_printf(2, "[bench] total_ops:	%i\n", (int)lst_ac_size(actions));

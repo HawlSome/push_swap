@@ -6,14 +6,16 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 15:46:41 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/28 02:58:36 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 02:08:20 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include "./ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
+
 
 typedef struct s_list
 {
@@ -28,10 +30,26 @@ typedef struct s_ac_list
 	struct s_ac_list	*next;
 }				t_ac_list;
 
+int			ft_input_verification(char **argv);
+int			ft_parse_input(int argc, char **argv, t_list **stack_a,
+				char ***parsed);
+int			ft_is_str_int(char *str);
+int			ft_is_there_str_int(char **tab);
+int			ft_is_valid_flag(char *str);
+int			ft_is_there_valid_flag(char **tab);
+int			ft_is_over_under_flow(char *tab);
+
 float		disorder_metric(t_list *stack_a);
 
 size_t		ft_strlen(char *str);
 int			ft_strcmp(char *s1, char *s2);
+void		*ft_calloc(size_t nmemb, size_t size);
+char		*ft_substr(char *s, unsigned int start, size_t len);
+void		ft_free_2d(char **tab);
+int			ft_isdigit(int c);
+int			ft_atoi(const char *nptr);
+char		**ft_split(char *s, char c);
+char		*ft_strjoin(size_t size, char **strs, char *sep);
 
 t_list		*lst_new(int value);
 t_list		*lst_last(t_list *list);

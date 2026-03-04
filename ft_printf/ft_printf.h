@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 23:51:55 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/28 01:47:41 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 01:48:03 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <unistd.h>
 # include <stdlib.h>
 
 int	ft_printf(int fd, char *str, ...);

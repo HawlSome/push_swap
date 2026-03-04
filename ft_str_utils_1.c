@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_utils_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 02:07:43 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 02:27:44 by varandri         ###   ########.fr       */
+/*   Created: 2026/03/04 21:44:45 by varandri          #+#    #+#             */
+/*   Updated: 2026/03/05 00:42:16 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(char **input, t_list **stack_a, t_ac_list **action)
+int	ft_isdigit(int c)
 {
-	
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
 
-int main(int argc, char **argv)
+int	ft_atoi(const char *nptr)
 {
-	char		**input;
-	t_list		*stack_a;
-	t_list		*stack_b;
-	t_ac_list	*actions;
-	
-	stack_a = NULL;
-	stack_b = NULL;
-	actions = NULL;
-	if (!ft_parse_input(argc, argv, &stack_a, &input))
-		return (0);
-	size_t i = 0;
-	while (input[i])
+	int		i;
+	int		sign;
+	long	nbr;
+
+	i = 0;
+	sign = 1;
+	nbr = 0;
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+		i ++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		ft_printf(1,"__%s__\n", input[i]);
-		i++;
+		if (nptr[i] == '-')
+			sign = -sign;
+		i ++;
 	}
-    return (0);
+	while (ft_isdigit(nptr[i]))
+	{
+		nbr = nbr * 10 + (nptr[i] - '0');
+		i ++;
+	}
+	return ((int)(sign * nbr));
 }
