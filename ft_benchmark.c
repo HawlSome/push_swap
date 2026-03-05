@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 01:54:22 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 05:36:18 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:22:34 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	ft_benchmark(float disorder, t_ac_list *actions, t_flag_list *flags)
 {
 	t_flag_list	*last_flag;
 
-	if (!actions || !flags)
+	if (!flags)
 		return ;
 	last_flag = lst_flag_last(flags);
-	ft_printf(2, "[bench] disorder:  	%f\n%%", disorder);
+	ft_printf(2, "[bench] disorder:  	%f%%\n", disorder);
 	ft_printf(2, "[bench] strategy:		");
 	ft_print_strategy(last_flag->is_adaptive, last_flag->algo_type);
 	ft_printf(2, "[bench] total_ops:	%i\n", (int)lst_ac_size(actions));

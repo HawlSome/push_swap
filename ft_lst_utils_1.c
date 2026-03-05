@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 23:30:27 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 05:31:23 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:02:25 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_list	*lst_dup(t_list *stack)
 
 	if (!stack)
 		return (NULL);
+	new = NULL;
 	current = stack;
 	while (current)
 	{

@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 15:46:41 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 05:32:43 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:05:31 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ size_t		lst_flag_size(t_flag_list *list);
 t_flag_list	*lst_flag_last(t_flag_list *list);
 void		lst_flag_add_back(t_flag_list **list, t_flag_list *node);
 
-void		lst_flag_clear(t_flag_list **list, void (*del)(void*));
+void		lst_flag_clear(t_flag_list **list);
 void		lst_clear(t_list **list);
-void		lst_ac_clear(t_ac_list **list, void (*del)(void*));
+void		lst_ac_clear(t_ac_list **list);
 
 void		new_action(t_ac_list	**list, char *name);
 void		new_list_value(t_list **list, int value);

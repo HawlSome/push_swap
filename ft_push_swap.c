@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 05:10:53 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 05:40:52 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:31:54 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	reinitialize_list(t_list **stack_a, t_list *backup_a,
 {
 	lst_clear(stack_a);
 	*stack_a = lst_dup(backup_a);
-	lst_ac_clear(actions, free);
+	lst_ac_clear(actions);
 	*actions = NULL;
 }
 
@@ -84,16 +84,18 @@ void	push_swap(char **input, t_list **stack_a, t_list **stack_b,
 		return ;
 	flags = NULL;
 	disorder = disorder_metric(*stack_a);
+	if (disorder < 1e-6)
+		return ;
 	if (!ft_is_there_complexity_flag(input))
 	{
 		new_flag(&flags, "adaptive", 1);
 		ft_ps_adaptive(stack_a, stack_b, actions, &flags);
 		execute_bench(input, disorder, *actions, flags);
-		lst_flag_clear(&flags, free);
+		lst_flag_clear(&flags);
 		return ;
 	}
 	get_flags(&flags, input);
 	execute_flags(stack_a, stack_b, actions, &flags);
 	execute_bench(input, disorder, *actions, flags);
-	lst_flag_clear(&flags, free);
+	lst_flag_clear(&flags);
 }

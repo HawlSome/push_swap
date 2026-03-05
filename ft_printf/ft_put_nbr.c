@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 00:42:05 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/28 03:05:05 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:08:25 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int	ft_put_nbr(int fd, int nbr)
 	ft_convert(nb_str, nb, n_len);
 	nb_str[n_len] = '\0';
 	ft_put_str(fd, nb_str);
+	free(nb_str);
 	return (n_len);
 }

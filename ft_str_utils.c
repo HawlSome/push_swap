@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 02:47:15 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 02:49:06 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:28:57 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ void	ft_free_2d(char **tab)
 		free(tab[i]);
 		i++;
 	}
-	free(tab);
+	if (tab || !tab)
+		free(tab);
 }

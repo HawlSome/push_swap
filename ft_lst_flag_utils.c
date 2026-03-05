@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 04:18:56 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 04:22:14 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:04:54 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,16 @@ void	lst_flag_add_back(t_flag_list **list, t_flag_list *node)
 	last->next = node;
 }
 
-void	lst_flag_clear(t_flag_list **list, void (*del)(void*))
+void	lst_flag_clear(t_flag_list **list)
 {
 	t_flag_list	*temp;
 
-	if (!list || !del)
+	if (!list)
 		return ;
 	while (*list)
 	{
 		temp = *list;
 		*list = (*list)->next;
-		del(temp->algo_type);
 		free(temp);
 	}
 }

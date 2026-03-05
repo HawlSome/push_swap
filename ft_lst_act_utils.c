@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:15:30 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 04:18:32 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:05:17 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,16 @@ void	lst_ac_add_back(t_ac_list **list, t_ac_list *node)
 	last->next = node;
 }
 
-void	lst_ac_clear(t_ac_list **list, void (*del)(void*))
+void	lst_ac_clear(t_ac_list **list)
 {
 	t_ac_list	*temp;
 
-	if (!list || !del)
+	if (!list)
 		return ;
 	while (*list)
 	{
 		temp = *list;
 		*list = (*list)->next;
-		del(temp->name);
 		free(temp);
 	}
 }
