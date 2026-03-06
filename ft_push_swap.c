@@ -6,20 +6,11 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 05:10:53 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 06:31:54 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 19:54:26 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	reinitialize_list(t_list **stack_a, t_list *backup_a,
-			t_ac_list **actions)
-{
-	lst_clear(stack_a);
-	*stack_a = lst_dup(backup_a);
-	lst_ac_clear(actions);
-	*actions = NULL;
-}
 
 static void	get_flags(t_flag_list **flags, char **input)
 {
@@ -46,25 +37,21 @@ static void	get_flags(t_flag_list **flags, char **input)
 static void	execute_flags(t_list	**stack_a, t_list **stack_b,
 			t_ac_list **actions, t_flag_list **flags)
 {
-	t_list		*backup_a;
 	t_flag_list	*flag;
+	float		disorder;
 
-	backup_a = lst_dup(*stack_a);
-	flag = *flags;
-	while (flag)
-	{
-		reinitialize_list(stack_a, backup_a, actions);
-		if (!ft_strcmp(flag->algo_type, "adaptive"))
-			ft_ps_adaptive(stack_a, stack_b, actions, flags);
-		if (!ft_strcmp(flag->algo_type, "simple"))
-			ft_ps_simple(stack_a, stack_b, actions);
-		if (!ft_strcmp(flag->algo_type, "medium"))
-			ft_ps_medium(stack_a, stack_b, actions);
-		if (!ft_strcmp(flag->algo_type, "complex"))
-			ft_ps_complex(stack_a, stack_b, actions);
-		flag = flag->next;
-	}
-	lst_clear(&backup_a);
+	flag = lst_flag_last(*flags);
+	disorder = disorder_metric(*stack_a);
+	if (disorder < 1e-6)
+		return ;
+	if (!ft_strcmp(flag->algo_type, "adaptive"))
+		ft_ps_adaptive(stack_a, stack_b, actions, &flag);
+	else if (!ft_strcmp(flag->algo_type, "simple"))
+		ft_ps_simple(stack_a, stack_b, actions);
+	else if (!ft_strcmp(flag->algo_type, "medium"))
+		ft_ps_medium(stack_a, stack_b, actions);
+	else if (!ft_strcmp(flag->algo_type, "complex"))
+		ft_ps_complex(stack_a, stack_b, actions);
 }
 
 static void	execute_bench(char **input, float disorder,
@@ -72,6 +59,15 @@ static void	execute_bench(char **input, float disorder,
 {
 	if (ft_is_there_bench_flag(input))
 		ft_benchmark(disorder, actions, flags);
+}
+
+static void	print_moves(t_ac_list *actions)
+{
+	while (actions)
+	{
+		ft_printf(1, "%s\n", actions->name);
+		actions = actions->next;
+	}
 }
 
 void	push_swap(char **input, t_list **stack_a, t_list **stack_b,
@@ -84,18 +80,19 @@ void	push_swap(char **input, t_list **stack_a, t_list **stack_b,
 		return ;
 	flags = NULL;
 	disorder = disorder_metric(*stack_a);
-	if (disorder < 1e-6)
-		return ;
 	if (!ft_is_there_complexity_flag(input))
 	{
 		new_flag(&flags, "adaptive", 1);
-		ft_ps_adaptive(stack_a, stack_b, actions, &flags);
+		if (disorder >= 1e-6)
+			ft_ps_adaptive(stack_a, stack_b, actions, &flags);
 		execute_bench(input, disorder, *actions, flags);
+		print_moves(*actions);
 		lst_flag_clear(&flags);
 		return ;
 	}
 	get_flags(&flags, input);
 	execute_flags(stack_a, stack_b, actions, &flags);
 	execute_bench(input, disorder, *actions, flags);
+	print_moves(*actions);
 	lst_flag_clear(&flags);
 }

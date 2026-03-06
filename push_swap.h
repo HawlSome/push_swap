@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 15:46:41 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 06:05:31 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 19:54:38 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ t_list		*lst_last(t_list *list);
 void		lst_add_back(t_list **list, t_list *node);
 void		lst_add_front(t_list **list, t_list *node);
 size_t		lst_size(t_list *list);
-t_list		*lst_dup(t_list *stack);
 t_list		*ft_find_min_index(t_list *list);
 t_list		*ft_find_max_index(t_list *list);
 
@@ -83,8 +82,10 @@ void		lst_ac_clear(t_ac_list **list);
 void		new_action(t_ac_list	**list, char *name);
 void		new_list_value(t_list **list, int value);
 void		new_flag(t_flag_list **list, char *algo_type, int is_adaptive);
-void		rotate_up(size_t counter, t_list **stack, t_ac_list **act_lst);
-void		rotate_down(size_t counter, t_list **stack, t_ac_list **act_lst);
+void		rotate_up(size_t counter, t_list **stack, t_ac_list **act_lst
+			, char *action);
+void		rotate_down(size_t counter, t_list **stack, t_ac_list **act_lst
+			, char *action);
 void		ft_ps_few(t_list **stack_a, t_list **stack_b, t_ac_list **actions);
 
 void		ft_push(t_list **from, t_list **to, t_ac_list **act_lst,

@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 19:26:58 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/26 17:34:15 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 17:08:53 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ static void	push_back(t_list **stack_b, t_list **stack_a, t_ac_list **act_lst)
 		max_node = ft_find_max_index(*stack_b);
 		node_place = ft_find_node_place(*stack_b, max_node);
 		if (node_place <= lst_size(*stack_b) / 2)
-			rotate_up(node_place, stack_b, act_lst);
+			rotate_up(node_place, stack_b, act_lst, "rb");
 		else if (node_place > lst_size(*stack_b) / 2)
-			rotate_down((lst_size(*stack_b) - node_place), stack_b, act_lst);
+			rotate_down((lst_size(*stack_b) - node_place), stack_b,
+				act_lst, "rrb");
 		ft_push(stack_b, stack_a, act_lst, "pa");
 	}
 }
@@ -52,7 +53,7 @@ void	ft_ps_medium(t_list **stack_a, t_list **stack_b, t_ac_list **act_lst)
 			ft_rotate(stack_a, act_lst, "ra");
 		if (!*stack_a)
 			break ;
-		ft_push(stack_a, stack_b, act_lst, "pa");
+		ft_push(stack_a, stack_b, act_lst, "pb");
 		if (stack_b && *stack_b && (*stack_b)->next
 			&& (*stack_b)->index < ((*stack_b)->next)->index)
 			ft_swap(stack_b, act_lst, "sb");

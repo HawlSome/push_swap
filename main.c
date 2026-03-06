@@ -6,20 +6,11 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 02:07:43 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 06:30:10 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 17:39:39 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	print_moves(t_ac_list *actions)
-{
-	while (actions)
-	{
-		ft_printf(1,"%s\n", actions->name);
-		actions = actions->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -34,10 +25,9 @@ int	main(int argc, char **argv)
 	if (!ft_parse_input(argc, argv, &stack_a, &input))
 		return (0);
 	push_swap(input, &stack_a, &stack_b, &actions);
-	print_moves(actions);
 	ft_free_2d(input);
 	lst_clear(&stack_a);
 	lst_clear(&stack_b);
 	lst_ac_clear(&actions);
-    return (0);
+	return (0);
 }

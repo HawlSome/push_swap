@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 15:57:29 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 06:27:09 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 16:22:00 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ int	ft_parse_input(int argc, char **argv, t_list **stack_a, char ***parsed)
 	jnd_str = ft_strjoin((size_t)(argc - 1), argv + 1, " ");
 	if (!jnd_str)
 	{
-		ft_printf(2, "Error");
+		ft_printf(2, "Error\n");
 		return (0);
 	}
 	sp_str = ft_split(jnd_str, ' ');
 	free(jnd_str);
 	if (!sp_str || !ft_input_verification(sp_str))
 	{
-		ft_printf(2, "Error");
+		ft_printf(2, "Error\n");
 		ft_free_2d(sp_str);
 		return (0);
 	}

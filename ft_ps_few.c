@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:46:30 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/26 17:43:26 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 17:06:51 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	ft_ps_few(t_list **stack_a, t_list **stack_b, t_ac_list **actions)
 		min = ft_find_min_value(*stack_a);
 		min_place = ft_find_node_place(*stack_a, min);
 		if (min_place <= 2 && min_place)
-			rotate_up(min_place, stack_a, actions);
+			rotate_up(min_place, stack_a, actions, "ra");
 		if (min_place > 2 && min_place)
-			rotate_down((size_a - min_place), stack_a, actions);
-		ft_push(stack_a, stack_b, actions, "pa");
+			rotate_down((size_a - min_place), stack_a, actions, "rra");
+		ft_push(stack_a, stack_b, actions, "pb");
 		size_a--;
 	}
 	if (size_a == 3)
@@ -52,5 +52,5 @@ void	ft_ps_few(t_list **stack_a, t_list **stack_b, t_ac_list **actions)
 	if ((*stack_a)->value > ((*stack_a)->next)->value)
 		ft_swap(stack_a, actions, "sa");
 	while (*stack_b)
-		ft_push(stack_b, stack_a, actions, "pb");
+		ft_push(stack_b, stack_a, actions, "pa");
 }

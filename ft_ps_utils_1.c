@@ -6,26 +6,28 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 15:05:49 by varandri          #+#    #+#             */
-/*   Updated: 2026/02/26 17:15:07 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 17:03:21 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_up(size_t counter, t_list **stack, t_ac_list **act_lst)
+void	rotate_up(size_t counter, t_list **stack, t_ac_list **act_lst
+			, char *action)
 {
 	while (counter)
 	{
-		ft_rotate(stack, act_lst, "ra");
+		ft_rotate(stack, act_lst, action);
 		counter--;
 	}
 }
 
-void	rotate_down(size_t counter, t_list **stack, t_ac_list **act_lst)
+void	rotate_down(size_t counter, t_list **stack, t_ac_list **act_lst
+			, char *action)
 {
 	while (counter)
 	{
-		ft_rev_rotate(stack, act_lst, "rra");
+		ft_rev_rotate(stack, act_lst, action);
 		counter--;
 	}
 }
