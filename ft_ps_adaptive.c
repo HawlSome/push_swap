@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ps_adaptive.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
+/*   By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 20:26:22 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/06 19:45:28 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 22:16:26 by tokyrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

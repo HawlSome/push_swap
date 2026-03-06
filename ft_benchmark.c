@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 01:54:22 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/06 17:44:52 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/07 02:44:56 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,16 @@ static void	ft_print_strategy(int is_adaptive, char *algo_type)
 void	ft_benchmark(float disorder, t_ac_list *actions, t_flag_list *flags)
 {
 	t_flag_list	*last_flag;
+	float		disorder_percent;
 
 	if (!flags)
 		return ;
 	last_flag = lst_flag_last(flags);
-	ft_printf(2, "[bench] disorder:\t%f%%\n", disorder);
+	disorder_percent = (float)(disorder * 100);
+	ft_printf(2, "[bench] disorder:\t%f%%\n", disorder_percent);
 	ft_printf(2, "[bench] strategy:\t");
 	ft_print_strategy(last_flag->is_adaptive, last_flag->algo_type);
-	ft_printf(2, "[bench] total_ops:	%i\n", (int)lst_ac_size(actions));
+	ft_printf(2, "[bench] total_ops:\t%i\n", (int)lst_ac_size(actions));
 	ft_printf(2, "[bench] sa:\t%i\t", ft_count_actions(actions, "sa"));
 	ft_printf(2, "sb:\t%i\t", ft_count_actions(actions, "sb"));
 	ft_printf(2, "pa:\t%i\t", ft_count_actions(actions, "pa"));

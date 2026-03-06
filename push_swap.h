@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
+/*   By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 15:46:41 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/06 19:54:38 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/06 22:40:29 by tokyrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ void		lst_ac_clear(t_ac_list **list);
 void		new_action(t_ac_list	**list, char *name);
 void		new_list_value(t_list **list, int value);
 void		new_flag(t_flag_list **list, char *algo_type, int is_adaptive);
-void		rotate_up(size_t counter, t_list **stack, t_ac_list **act_lst
-			, char *action);
-void		rotate_down(size_t counter, t_list **stack, t_ac_list **act_lst
-			, char *action);
+void		rotate_up(size_t counter, t_list **stack, t_ac_list **act_lst,
+				char *action);
+void		rotate_down(size_t counter, t_list **stack, t_ac_list **act_lst,
+				char *action);
 void		ft_ps_few(t_list **stack_a, t_list **stack_b, t_ac_list **actions);
 
 void		ft_push(t_list **from, t_list **to, t_ac_list **act_lst,
