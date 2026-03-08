@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: varandri <varandri@student.42antananari    +#+  +:+       +#+         #
+#    By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/15 20:23:27 by varandri          #+#    #+#              #
-#    Updated: 2026/03/06 23:05:48 by varandri         ###   ########.fr        #
+#    Updated: 2026/03/06 23:26:41 by tokyrand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

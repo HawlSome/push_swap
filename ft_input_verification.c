@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 15:57:26 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 02:03:22 by varandri         ###   ########.fr       */
+/*   Updated: 2026/03/08 15:08:57 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_clone_verification(char **tab)
 		j = i + 1;
 		while (tab[j])
 		{
-			if (ft_is_str_int(tab[i]) && !ft_strcmp(tab[i], tab[j]))
+			if (ft_is_str_int(tab[i]) && ft_atoi(tab[i]) == ft_atoi(tab[j]))
 				return (0);
 			j++;
 		}
