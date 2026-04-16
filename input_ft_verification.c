@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 15:57:26 by varandri          #+#    #+#             */
-/*   Updated: 2026/04/16 15:35:35 by varandri         ###   ########.fr       */
+/*   Updated: 2026/04/16 15:57:39 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_sus_verification(char **tab)
 
 static int	ft_falg_no_elem_verification(char **tab)
 {
-	if (!ft_is_there_str_int(tab) && ft_is_there_valid_flag(tab))
+	if (!ft_is_there_str_int(tab) && ft_is_there_complexity_flag(tab))
 		return (1);
 	return (0);
 }
