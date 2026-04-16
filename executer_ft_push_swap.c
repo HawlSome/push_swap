@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*   executer_ft_push_swap.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 05:10:53 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/06 19:54:26 by varandri         ###   ########.fr       */
+/*   Updated: 2026/04/16 15:47:43 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,7 @@ void	push_swap(char **input, t_list **stack_a, t_list **stack_b,
 	flags = NULL;
 	disorder = disorder_metric(*stack_a);
 	if (!ft_is_there_complexity_flag(input))
-	{
 		new_flag(&flags, "adaptive", 1);
-		if (disorder >= 1e-6)
-			ft_ps_adaptive(stack_a, stack_b, actions, &flags);
-		execute_bench(input, disorder, *actions, flags);
-		print_moves(*actions);
-		lst_flag_clear(&flags);
-		return ;
-	}
 	get_flags(&flags, input);
 	execute_flags(stack_a, stack_b, actions, &flags);
 	execute_bench(input, disorder, *actions, flags);
