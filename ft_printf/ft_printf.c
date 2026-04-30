@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 23:50:02 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/05 01:50:28 by varandri         ###   ########.fr       */
+/*   Updated: 2026/04/30 19:35:51 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ int	ft_printf(int fd, char *str, ...)
 {
 	va_list	args;
 	size_t	i;
-	int		count;
 
 	if (!str)
 		return (-1);
 	i = 0;
-	count = 0;
 	va_start(args, str);
 	while (str[i])
 	{
