@@ -6,7 +6,7 @@
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 05:10:53 by varandri          #+#    #+#             */
-/*   Updated: 2026/04/16 18:43:59 by varandri         ###   ########.fr       */
+/*   Updated: 2026/04/30 19:37:04 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	push_swap(char **input, t_list **stack_a, t_list **stack_b,
 		new_flag(&flags, "adaptive", 1);
 	get_flags(&flags, input);
 	execute_flags(stack_a, stack_b, actions, &flags);
-	print_moves(*actions);
 	execute_bench(input, disorder, *actions, flags);
+	print_moves(*actions);
 	lst_flag_clear(&flags);
 }
