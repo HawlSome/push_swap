@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_medium.c                                     :+:      :+:    :+:   */
+/*   algo_ft_ps_medium.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: varandri <varandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 19:26:58 by varandri          #+#    #+#             */
-/*   Updated: 2026/03/06 17:08:53 by varandri         ###   ########.fr       */
+/*   Updated: 2026/04/30 19:35:22 by varandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	ft_ps_medium(t_list **stack_a, t_list **stack_b, t_ac_list **act_lst)
 {
 	size_t	min_index;
 	size_t	rng_block;
-	size_t	n_block;
+	// size_t	n_block;
 
 	index_attribution(stack_a);
 	min_index = (ft_find_min_index(*stack_a))->index;
 	rng_block = ft_range_block(*stack_a, ft_sqrt(lst_size(*stack_a)));
-	n_block = ft_sqrt(lst_size(*stack_a));
+	// n_block = ft_sqrt(lst_size(*stack_a));
 	if (lst_size(*stack_a) <= 5)
 		return (ft_ps_few(stack_a, stack_b, act_lst));
 	while (*stack_a)
